@@ -1,0 +1,174 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #b0c4de;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  
+}
+
+
+.user-item-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+.user-item-container h1 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.user-item-container h3 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.user-item-buttons {
+  margin-top: 10px;
+}
+
+/* Form styling */
+.user-form-container {
+  margin-bottom: 20px;
+}
+
+.user-form-container form {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.user-form-container form label {
+  color: #333;
+  font-weight: bold;
+}
+
+.user-form-container form input[type="text"],
+.user-form-container form input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-form-container form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Button styling */
+.user-item-buttons button {
+  margin-right: 10px;
+}
+
+.user-item-buttons button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user-item-buttons button:hover {
+  background-color: #218838;
+}
+
+.user-item-buttons button:last-child {
+  background-color: #dc3545;
+}
+
+.user-item-buttons button:last-child:hover {
+  background-color: #c82333;
+}
+
+
+
+
+/* Modal container */
+.modal-content {
+  border-radius: 10px;
+  background-color: rgba(75, 8, 55, 0.831);
+}
+
+
+.modal-header {
+  background-color: #f0f0f0;
+  border-bottom: none;
+}
+
+/* Modal title */
+.modal-title {
+  color: #333;
+}
+
+/* Modal body */
+.modal-body {
+  padding: 20px;
+}
+
+/* Form label */
+.form-label {
+  font-weight: bold;
+}
+
+/* Form input fields */
+.form-control {
+  margin-bottom: 15px;
+}
+
+/* Modal footer */
+.modal-footer {
+  border-top: none;
+}
+
+
+.btn-close {
+  color: #888;
+}
+
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 15px;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
