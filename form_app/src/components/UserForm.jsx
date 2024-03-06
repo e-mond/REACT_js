@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { v4 as uuid } from 'uuid';
 
-function UserForm() {
+
+function UserForm(props) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
 
@@ -15,8 +17,19 @@ function UserForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+        // Create a new user object
+        const newUser = {
+            name: name,
+            email: email,
+            Id: uuid() 
+        };
+        // Call the addUser function passed from App component
+        props.addUser(newUser);
+        // Reset the form fields
+        setName("");
+        setEmail("");
     }
+    
 
     return (
         <Container className="form-container">

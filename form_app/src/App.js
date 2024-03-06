@@ -17,12 +17,25 @@ function App() {
   };
 
   const editUser = (UserId, newUserDetails) => {
-    let arr = users.map(user =>
-  };
+    let arr = users.map((user) => {
+        if (user.Id === UserId) { // Corrected from user.id to user.Id
+            return { ...user, ...newUserDetails }; // Merge user details with newUserDetails
+        } else {
+            return user;
+        }
+    });
+    setUser(arr);
+}
 
-  const removeUser = (UserId) => {
-    console.log(UserId);
-  }
+
+
+const removeUser = (UserId) => {
+  let filteredArr = users.filter((User) => {
+    return User.Id !== UserId;
+  });
+  setUser(filteredArr);
+}
+
 
   return (
     <Container>

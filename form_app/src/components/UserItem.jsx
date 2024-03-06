@@ -20,11 +20,12 @@ function UserItem(props) {
     }
 
     const handleEdit = () => {
-       let newDetails = { name: name, email: email };
-       let mergeDetails = { ...props.details, ...mergeDetails };
+        let newDetails = { name: name, email: email };
+        let mergeDetails = { ...props.details, ...newDetails };
         props.editUser(props.details.Id, mergeDetails);
         handleModalState(); // Close modal after editing
     }
+    
 
     return (
         <div className="user-item-container">
