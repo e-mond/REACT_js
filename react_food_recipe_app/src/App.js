@@ -1,11 +1,12 @@
 // App.js
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { fetchRecipes } from './utils/api';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Home from './components/Home';
+import About from './components/About';
 import RecipeList from './components/recipes/RecipeList';
 import RecipeDetails from './components/recipes/RecipeDetails';
 import SignInForm from './components/common/SignInForm';
@@ -15,20 +16,44 @@ import AddRecipeForm from './components/admin/AddRecipeForm';
 import EditRecipeForm from './components/admin/EditRecipeForm';
 
 function App() {
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    // Fetch recipes when the component mounts
+    fetchRecipes('jollof')
+      .then(data => {
+        setRecipes(data);
+      })
+      .catch(error => {
+        console.error('Error fetching recipes:', error);
+      });
+  }, []);
+
+  const handleSearch = (query) => {
+    fetchRecipes(query)
+      .then(data => {
+        setRecipes(data);
+      })
+      .catch(error => {
+        console.error('Error fetching recipes:', error);
+      });
+  };
+
   return (
     <Router>
       <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/recipes" component={RecipeList} />
-          <Route path="/recipe/:id" component={RecipeDetails} />
-          <Route path="/sign" component={SignInForm} />
-          <Route path="/signup" component={SignUpForm} />
-          <Route path="/admin" component={AdminDashboard} />
-          <Route path="/add-recipe" component={AddRecipeForm} />
-          <Route path="/edit-recipe/:id" component={EditRecipeForm} />
-        </Switch>
+        <Header onSearch={handleSearch} /> {/* Pass handleSearch function as prop */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/recipes" element={<RecipeList recipes={recipes} />} />
+          <Route path="/recipe/:id" element={<RecipeDetails />} />
+          <Route path="/sign" element={<SignInForm />} />
+          <Route path="/signup" element={<SignUpForm />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/add-recipe" element={<AddRecipeForm />} />
+          <Route path="/edit-recipe/:id" element={<EditRecipeForm />} />
+        </Routes>
         <Footer />
       </div>
     </Router>

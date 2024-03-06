@@ -1,11 +1,21 @@
-// RecipeDetails.js
 import React from 'react';
+import '../common/Details.css'; // Assuming the CSS file is located in the 'common' directory
 
-function RecipeDetails() {
+const RecipeDetails = ({ recipe }) => {
   return (
-    <div>
-      <h2>Recipe Details</h2>
-      {/* Display details of a single recipe */}
+    <div className="recipe-details">
+      <h2>{recipe.title}</h2>
+      <img src={recipe.image} alt={recipe.title} className="recipe-image" />
+      <div className="recipe-info">
+        <p><strong>Ingredients:</strong></p>
+        <ul>
+          {recipe.ingredients.map((ingredient, index) => (
+            <li key={index}>{ingredient}</li>
+          ))}
+        </ul>
+        <p><strong>Instructions:</strong></p>
+        <p>{recipe.instructions}</p>
+      </div>
     </div>
   );
 }
