@@ -14,3 +14,7 @@ const newPeoplw =  people.map((person) => {
 console.log(newPeoplw)
 console.log(newPeople)
 
+
+
+
+

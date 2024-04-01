@@ -1,0 +1,59 @@
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: #333; */
+    background-color: #800080;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .navbar .active {
+    font-weight: bold;
+  }
+  
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-middle {
+    display: flex;
+  }
+  
+  .navbar-middle .nav-link {
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navbar-middle .nav-link:hover {
+    color: #FFD700; 
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .signin-btn {
+    background-color: #fff;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .signin-btn svg {
+    margin-right: 5px;
+  }
+  
+  .cart-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
