@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import Users from './components/User'; 
+import UsersForm from './components/UsersForms';
+import Users from './components/User';
 
 function App() {
+  const [users, setUsers] = useState([
+    { name: 'Crispin S. Wales', email: 'cris.wales@codetrain.com', gen: 20 },
+    { name: 'Micheal Adams', email: 'micheal02@codetrain.com', gen: 26 },
+    { name: 'Benrad Acquah', email: 'b.acquah07@codetain.com', gen: 14 },
 
-  //An initial array of predefined users
-  const initialUsers = [
-    { name: 'Rebecca Adams', email: 'adamsbecca01@got.com', gen: 'Femaale' },
-    { name: 'John Snow', email: 'johnsnow@got.com', gen: 'Male' },
-  
-  ];
+  ]);
 
-  //  state that holds users array
-  const [users, setUsers] = useState(initialUsers);
-
+  const handleAddUser = newUser => {
+    setUsers([...users, newUser]);
+  };
 
   return (
     <div className="App">
-
-      {/* Passing the users array as props to the Users component */}
-      <Users users={users} /> 
+      <UsersForm onAddUser={handleAddUser} />
+      <h1>List of Users</h1>
+      <Users users={users} />
     </div>
   );
 }
