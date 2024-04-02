@@ -1,0 +1,29 @@
+body{
+  background-color: bisque;
+}
+.App {
+  text-align: center;
+}
+
+.MovieReview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ReviewCard {
+  width: 300px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ReviewCard h2 {
+  margin-top: 0;
+}
+
+.ReviewCard p {
+  margin-bottom: 10px;
+}
