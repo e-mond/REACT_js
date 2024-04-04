@@ -1,30 +1,35 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 import Services from './Services';
 import ServiceDetails from './ServiceDetails';
+import './styles.css'; 
 
 const AppRouter = () => {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
+        <nav className="nav">
+          <div className="logo">
+            <img src={require('../../src/asserts/L1.png')} alt="ea shots logo" />
+          </div>
+          <ul className="nav-links">
             <li>
-              <Link to="/">Home</Link>
+              <NavLink to="/" activeClassName="active">Home</NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about" activeClassName="active">About</NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact</Link>
+              <NavLink to="/contact" activeClassName="active">Contact</NavLink>
             </li>
             <li>
-              <Link to="/services">Services</Link>
+              <NavLink to="/services" activeClassName="active">Services</NavLink>
             </li>
           </ul>
+          <button className="get-template-btn">Get Template</button>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />

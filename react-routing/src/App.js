@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import Router from './components/Router';
 
